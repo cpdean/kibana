@@ -7,11 +7,13 @@ module.exports = function(config) {
     basePath: '',
 
     // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'requirejs'],
 
     // list of files / patterns to load in the browser
     files: [
-      'test/**/*.js'
+        {pattern: 'src/vendor/**/**.js', included: false},
+        'test/**/*.js',
+        'test/test-main.js'
     ],
 
     // list of files / patterns to exclude
@@ -37,11 +39,12 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['PhantomJS'], // can only use PhantomJS in travis.ci
+    //browsers: ['PhantomJS'], // can only use PhantomJS in travis.ci
+    browsers: ['Chrome'], // can only use PhantomJS in travis.ci
 
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: true
+    singleRun: false
   });
 };

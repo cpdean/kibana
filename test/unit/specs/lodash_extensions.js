@@ -1,9 +1,10 @@
 describe('Lodash mixins', function () {
   var _;
 
-  before(function (done) {
+  beforeEach(function (done) {
     // load modules using require.js once we are ready to being
     require(['lodash'], function (__) {
+        debugger;
       _ = __;
       done();
     });
